@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        distancia = parseInt(prompt('Ingrese distancia en metros:', ''));
+
+        if (distancia >= 1 && distancia <= 1000)  // || OR
+            document.write('debes ir a pie.');
+
+
+        if (distancia >= 1000 && distancia <= 10000)  // || OR
+            document.write('debes ir en bicicleta.');
+
+
+        if (distancia >= 10000 && distancia <= 30000)  // || OR
+            document.write('debes ir en colectivo.');
+
+
+        if (distancia >= 30000 && distancia <= 100000)  // || OR
+            document.write('debes ir en auto.');
+
+
+        if (distancia >= 100000)  // || OR
+            document.write('debes ir en avion.');    
+    </script>
+
+</body>
+
+</html>
