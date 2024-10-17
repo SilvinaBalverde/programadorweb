@@ -1,0 +1,105 @@
+/* font-family: "Quicksand", sans-serif */
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background: url(/img/testimonio.jpg);
+
+}
+
+h1,
+h2,
+p {
+    font-family: "Quicksand", sans-serif;
+}
+
+
+
+
+.hero {
+    background: url(/img/header.jpg) no-repeat;
+    background-size: cover;
+    height: 50vh;
+    min-height: 600px;
+    color: white;
+}
+
+
+.lista-especialidades {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-especialidades li {
+    margin: 4px 0;
+}
+
+.lista-especialidades li a {
+    background-color: #fff;
+    font-family: "Quicksand", sans-serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    transition: all .2s ease-in-out;
+    display: block;
+}
+
+.lista-especialidades li a:hover {
+    color: #212529;
+    background-color: #dadada;
+}
+
+.lista-especialidades li a img {
+    width: 120px;
+    height: 50px;
+    filter: grayscale();
+    transition: all .2s ease-in-out;
+    margin-right: 1rem;
+    opacity: 0.7;
+}
+
+.lista-especialidades li a:hover img {
+    filter: none;
+    margin-right: 1.4rem;
+    opacity: 1;
+}
+
+.testimonios {
+    background-color: #cfc5c5;
+    padding-bottom: 4rem !important;
+    color: black;
+}
+
+.testimonio {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.staff {
+    color: black;
+    font-family: "Quicksand", sans-serif;
+}
+
+.contactanos {
+    background-color: #cfc5c5;
+    color: black;
+    padding: 20px 20px 20px 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    aspect-ratio: 1.2;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll_section {
+    scroll-margin-top: 60px;
+}
