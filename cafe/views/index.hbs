@@ -22,41 +22,38 @@
 
 <!-- inicio especialidades -->
 <div class="row my-3">
-    <div id="especialidades" class="col-md-5 offset-lg-2 py-3">
-        <h2>Especialidades</h2>
+    <div id="novedades" class="col-md-5 offset-lg-2 py-3">
+        <h2>Novedades</h2>
         <ul class="lista-especialidades">
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/img/especialidades.jpg">
-                    Expresso</a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/img/especialidades.jpg">
-                    Mocca</a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/img/especialidades.jpg">
-                    Latte</a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/img/especialidades.jpg">
-                    Matcha</a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/img/especialidades.jpg">
-                    Capuccino</a></li>
+            {{#each novedades}}
+            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="/img/especialidades.jpg">
+                {{titulo}} </a></li>
 
+            {{/each }}
         </ul>
         <!-- inicio modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {{#each novedades}}
+        <div class="modal fade" id="exampleModal {{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLabel">Cafe</h2>
+                        <h2 class="modal-title" id="exampleModalLabel">{{titulo}} </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <h3>Cantidad de cafeína</h3>
-                        <p>Entre 70 y 90 mg por taza.</p>
+                        <h3>{{subtitulo}} </h3>
+                        <p>{{cuerpo}}</p>
                     </div>
 
                 </div>
             </div>
         </div>
+            {{/each}}
         <!--  fin modal -->
 
 
     </div>
+
     <!-- fin novedades -->
 
 
@@ -230,7 +227,7 @@
     <div class="col-md-4 mt-4 mt-sm-0">
         <div class="contactanos">
             <h2>Contactanos</h2>
-        
+
             <form class="row g-3" action="/" method="post">
                 <div class="col-md-6">
                     <label for="nombre" class="form-label">Nombre</label>
