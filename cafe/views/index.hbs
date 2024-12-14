@@ -26,14 +26,14 @@
         <h2>Novedades</h2>
         <ul class="lista-especialidades">
             {{#each novedades}}
-            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="/img/especialidades.jpg">
+            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="{{imagen}}">
                 {{titulo}} </a></li>
 
             {{/each }}
         </ul>
         <!-- inicio modal -->
         {{#each novedades}}
-        <div class="modal fade" id="exampleModal {{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -42,6 +42,7 @@
                     </div>
                     <div class="modal-body">
                         <h3>{{subtitulo}} </h3>
+                        <img src="{{imagen}}"> 
                         <p>{{cuerpo}}</p>
                     </div>
 
