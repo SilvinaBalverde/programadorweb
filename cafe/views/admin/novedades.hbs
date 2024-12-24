@@ -18,6 +18,13 @@
             <div class="col-2 text-right">
                 <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fa fa-plus"></i>Nuevo</a>
             </div>
+            <div class="col-3">
+                <form class="form-inline my-2 my-lg-0" action="/admin/novedades" method="get">
+                    <input class="form-control mr-ms-2" type="search" placeholder="Search" aria-label="Search" name="q"
+                        {{#if q}}value="{{q}}" {{/if}} value="{{q}}"> <button class="btn btn-secondary my-2 my-ms-0"
+                        type="submit"> <i class="fa fa-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -29,7 +36,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                          <th scope="col">Imagen</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -40,8 +47,10 @@
                         <td>{{titulo}} </td>
                         <td>{{{imagen}}} </td>
                         <td class="text-center">
-                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
-                            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
+                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary"><i
+                                    class="fa fa-pencil"></i></a>
+                            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary"><i
+                                    class="fa fa-trash"></i></a>
                         </td>
 
                     </tr>
@@ -49,6 +58,13 @@
 
                 </tbody>
             </table>
+
+            {{#if is_search}}
+            {{#unless noveades.length}}
+            No se encontraron resultados para "<strong>{{q}}</strong>"
+            {{/unless}}
+            {{/if}}
+
         </div>
     </div>
 

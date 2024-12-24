@@ -7,7 +7,15 @@ const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function (req, res, next) {
-    var novedades = await novedadesModel.getNovedades();
+    var novedades
+    if (req.query.q === undefined) {
+
+        var novedades = await novedadesModel.getNovedades();
+    } else {
+        novedades = await novedadesModel.buscarNovedades(req.query.q);
+    }
+
+
 
     novedades = novedades.map(novedad => {
         if (novedad.img_id) {
@@ -32,7 +40,9 @@ router.get('/', async function (req, res, next) {
     res.render('admin/novedades', {
         layout: 'admin/layout',
         usuario: req.session.nombre,
-        novedades
+        novedades,
+        is_search: req.query.q !== undefined,
+        q: req.query.q
     });
 });
 
@@ -40,10 +50,10 @@ router.get('/', async function (req, res, next) {
 router.get('/eliminar/:id', async (req, res, next) => {
     var id = req.params.id;
 
-let novedad = await novedadesMode.getNovedadById(id);
-if (novedad.img_id) {
-    await (destroy(novedad.img_id));
-}
+    let novedad = await novedadesMode.getNovedadById(id);
+    if (novedad.img_id) {
+        await (destroy(novedad.img_id));
+    }
 
     await novedadesModel.deleteNovedadesById(id);
     res.redirect('/admin/novedades')
